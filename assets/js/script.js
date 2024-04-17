@@ -4,7 +4,20 @@ createApp({
         return {
             url: 'api.php',
             error: '',
-            dischi: []
+            dischi: [],
+            discoSelect: null
+        }
+    },
+    methods: {
+        openDisco(disco) {
+            console.log('Disco', disco);
+            this.discoSelect = disco;
+            console.log('discoselect', this.discoSelect);
+            document.querySelector('.modale').classList.add('active');
+        },
+        closeDisco() {
+            this.discoSelect = null;
+            document.querySelector('.modale').classList.remove('active');
         }
     },
     mounted() {

@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="disco" v-for="disco in dischi">
+            <div class="disco" v-for="disco in dischi" @click="openDisco(disco)">
                 <div class="image">
                     <img :src="disco.poster" alt="">
                 </div>
@@ -21,6 +21,19 @@
                     <h4>{{ disco.year }}</h4>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="modale">
+        <button @click="closeDisco()">&Cross;</button>
+        <div class="disco">
+            <div class="image">
+                    <img :src="discoSelect.poster" alt="">
+                </div>
+                <div class="text">
+                    <h3>{{ discoSelect.title }}</h3>
+                    <p>{{ discoSelect.author }}</p>
+                    <h4>{{ discoSelect.year }}</h4>
+                </div>
         </div>
     </div>
 
