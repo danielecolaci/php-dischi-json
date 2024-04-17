@@ -10,14 +10,18 @@
 </head>
 <body>
     <div id="app">
-        <ul v-for="disco in dischi">
-            <li>
-                <img :src="disco.poster" alt="">
-                <h3>{{ disco.title }}</h3>
-                <h5>{{ disco.author }}</h5>
-                <h4>{{ disco.year }}</h4>
-            </li>
-        </ul>
+        <div class="container">
+            <div class="disco" v-for="disco in dischi">
+                <div class="image">
+                    <img :src="disco.poster" alt="">
+                </div>
+                <div class="text">
+                    <h3>{{ disco.title }}</h3>
+                    <p>{{ disco.author }}</p>
+                    <h4>{{ disco.year }}</h4>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Axios -->
